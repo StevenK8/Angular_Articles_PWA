@@ -4,6 +4,7 @@
     <p (click)="openInfo()" class="card-text"> {{this.article.content}} </p>
     <!-- Italic author name -->
     <p (click)="openInfo()" class="card-text fst-italic" > {{this.author.name}} </p>
+    <p (click)="openInfo()" class="card-text fst-italic" *ngIf="isInfo"> {{this.author.biography}} </p>
     <button (click)="onDelete()" class="btn btn-danger">Delete</button>
   </div>
 </div>

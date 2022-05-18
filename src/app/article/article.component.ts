@@ -18,6 +18,8 @@ export class ArticleComponent implements OnInit {
     name: '',
     biography: ''
   };
+
+  isInfo : boolean = false;
     
   @Output()
   deleteArticle : EventEmitter<Article> = new EventEmitter();
@@ -26,6 +28,11 @@ export class ArticleComponent implements OnInit {
   getAuthor : EventEmitter<Author> = new EventEmitter();
 
   ngOnInit(): void {
+    if(this.route.url === '/article/' + this.article.id) {
+      this.isInfo = true;
+    }else{
+      this.isInfo = false;
+    }
     this.articleService.getAuthorFromArticle(this.article).subscribe(a => {
       this.author = a;
     });
