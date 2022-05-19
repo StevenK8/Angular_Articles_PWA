@@ -18,7 +18,6 @@ import { environment } from '../environments/environment';
 import { ArticleCacheService } from './article-cache.service';
 
 const appRoutes: Routes = [
-  { path: 'articles', component: ArticlesComponent },
   { path: '', component: ArticlesComponent },
   { path: 'article/:id', component: ArticleInfoComponent },
   { path: 'create', component: ArticleCreationComponent },
