@@ -3,10 +3,10 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
 
-## Aide pour le TP
+## Aide pour le TP2
 
-- J'ai aidé : Kevin Gallus
-- M'ont aidé : Sébastien Léonce, Silvain Théréné
+- J'ai aidé : 
+- M'ont aidé : 
 
 ## Installation
 
