@@ -20,13 +20,15 @@ export class ArticlesComponent implements OnInit {
 
   articlesFilter?: Article[];
 
-  constructor(private articleService: ArticleCacheService) {}
-
-  ngOnInit() {
+  constructor(private articleService: ArticleCacheService) {
     this.articleService.getArticles().subscribe((articles) => {
       this.articles = articles;
       this.articlesFilter = articles;
     });
+  }
+
+  ngOnInit() {
+
   }
 
   delete(article: Article) {
