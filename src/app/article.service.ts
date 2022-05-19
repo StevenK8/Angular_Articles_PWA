@@ -3,9 +3,10 @@ import { Article, ArticleCreation } from './model/article';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Author, AuthorCreation } from './model/author';
+import { ArticleSource } from './article.source';
 
 @Injectable()
-export class ArticleService {
+export class ArticleService implements ArticleSource {
   constructor(private http: HttpClient) {}
 
   public getArticles(): Observable<Article[]> {
@@ -14,10 +15,6 @@ export class ArticleService {
 
   public getTop10Articles(): Observable<Article[]> {
     return this.http.get<Article[]>('https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles?_limit=10');
-  }
-
-  public getArticlesByName(name: string): Observable<Article[]> {
-    return this.http.get<Article[]>(`https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles?q=${name}`);
   }
 
   public getArticleByName(name: string): Observable<Article[]> {

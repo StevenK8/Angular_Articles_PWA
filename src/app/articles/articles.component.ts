@@ -34,7 +34,7 @@ export class ArticlesComponent implements OnInit {
   public searchArticle(e: Event) {
     const title = (<HTMLInputElement>e.target).value;
 
-    this.articleService.getArticlesByName(title).subscribe(a => {
+    this.articleService.getArticleByName(title).subscribe(a => {
       this.articles = a;
     });
   }
