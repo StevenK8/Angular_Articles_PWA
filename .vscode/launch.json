@@ -15,6 +15,13 @@
       "request": "launch",
       "preLaunchTask": "npm: test",
       "url": "http://localhost:9876/debug.html"
+    },
+    {
+      "name": "ng run",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "preLaunchTask": "http-server -p 8080",
+      "url": "http://localhost:8080/"
     }
   ]
 }

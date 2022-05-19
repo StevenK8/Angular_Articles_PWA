@@ -9,44 +9,44 @@ export class ArticleService {
   constructor(private http: HttpClient) {}
 
   public getArticles(): Observable<Article[]> {
-    return this.http.get<Article[]>('http://localhost:3000/articles');
+    return this.http.get<Article[]>('https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles');
   }
 
   public getTop10Articles(): Observable<Article[]> {
-    return this.http.get<Article[]>('http://localhost:3000/articles?_limit=10');
+    return this.http.get<Article[]>('https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles?_limit=10');
   }
 
   public getArticlesByName(name: string): Observable<Article[]> {
-    return this.http.get<Article[]>(`http://localhost:3000/articles?q=${name}`);
+    return this.http.get<Article[]>(`https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles?q=${name}`);
   }
 
   public getArticleByName(name: string): Observable<Article[]> {
-    return this.http.get<Article[]>(`http://localhost:3000/articles?q=${name}`);
+    return this.http.get<Article[]>(`https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles?q=${name}`);
   }
 
   public getSingleArticle(id: number): Observable<Article> {
-    return this.http.get<Article>(`http://localhost:3000/articles/${id}`);
+    return this.http.get<Article>(`https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles/${id}`);
   }
     
   public createArticle(article: ArticleCreation): Observable<Article> {
-    return this.http.post<Article>('http://localhost:3000/articles', article);
+    return this.http.post<Article>('https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles', article);
   }
 
   public createAuthor(author: AuthorCreation): Observable<Author> {
-    return this.http.post<Author>('http://localhost:3000/authors', author);
+    return this.http.post<Author>('https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/authors', author);
   }
 
   // public getAuthorId(author: AuthorCreation): number {
-  //   this.http.get<Author>(`http://localhost:3000/authors?q=${author.name}`).subscribe(a => {
+  //   this.http.get<Author>(`https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/authors?q=${author.name}`).subscribe(a => {
   //     return a.id;
   //   });
   // }
 
   public getAuthorFromArticle(article: Article): Observable<Author> {
-    return this.http.get<Author>(`http://localhost:3000/authors/${article.idauthor}`);
+    return this.http.get<Author>(`https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/authors/${article.idauthor}`);
   }
 
   public deleteArticle(id: number): Observable<Article> {
-    return this.http.delete<Article>(`http://localhost:3000/articles/${id}`);
+    return this.http.delete<Article>(`https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/articles/${id}`);
   }
 }
