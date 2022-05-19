@@ -28,7 +28,7 @@ export class ArticlesComponent implements OnInit {
 
   getAuthor(article: Article) {
     this.articleService.getArticleByName(article.title).subscribe(a => {
-      console.log(a);
+      // console.log(a);
     });
     // console.log(article);
   }
