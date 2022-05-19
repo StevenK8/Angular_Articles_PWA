@@ -44,7 +44,7 @@ export class ArticleCreationComponent implements OnInit {
         idauthor: a.id
       };
       this.articleService.createArticle(article).subscribe(() => {
-        this.router.navigate(['/articles']);
+        this.router.navigate(['/']);
       });
 
     }

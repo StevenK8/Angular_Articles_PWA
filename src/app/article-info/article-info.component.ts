@@ -29,7 +29,7 @@ export class ArticleInfoComponent implements OnInit {
 
   delete(article: Article) {
     this.articleService.deleteArticle(article.id).subscribe(_value => {
-      this.router.navigate(['/articles']);
+      this.router.navigate(['/']);
     });
   }
 
