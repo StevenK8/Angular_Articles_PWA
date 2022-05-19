@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ArticleCacheService } from '../article-cache.service';
 import { ArticleService } from '../article.service';
+import { ArticleSource } from '../article.source';
 import { Article } from '../model/article';
 import { Author } from '../model/author';
 
@@ -14,7 +16,7 @@ export class ArticleInfoComponent implements OnInit {
   articles!: Article[];
 
  
-  constructor(private route: ActivatedRoute, private router: Router, private articleService: ArticleService) {
+  constructor(private route: ActivatedRoute, private router: Router, private articleService: ArticleCacheService) {
     const id = parseInt(this.route.snapshot.paramMap.get('id') || '0');
     this.articleService.getSingleArticle(id).subscribe(a => {
       this.articles = [a];

@@ -10,6 +10,21 @@ import { environment } from 'src/environments/environment';
 export class ArticleService implements ArticleSource {
   constructor(private http: HttpClient) {}
 
+  private preloadArticles : Article[] | undefined;
+
+
+  public preloadArticles$(): Observable<Article[]> {
+    if (!this.preloadArticles) {
+      return this.http.get<Article[]>(`${environment.apiUrl}/articles?_sort=date&_order=desc`).pipe(
+        map(articles => {
+          this.preloadArticles = articles;
+          return articles;
+        })
+      );
+    }
+
+    return of(this.preloadArticles);
+  }
 
   private preloadAuthors : Author[] | undefined;
 

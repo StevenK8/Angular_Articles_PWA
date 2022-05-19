@@ -15,6 +15,7 @@ import { ArticleInfoComponent } from './article-info/article-info.component';
 import { ArticleTopComponent } from './article-top/article-top.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ArticleCacheService } from './article-cache.service';
 
 const appRoutes: Routes = [
   { path: 'articles', component: ArticlesComponent },
@@ -45,10 +46,10 @@ const appRoutes: Routes = [
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerImmediately'
     })
   ],
-  providers: [ArticleService],
+  providers: [ArticleCacheService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

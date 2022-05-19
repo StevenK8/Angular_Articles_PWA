@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticleCacheService } from '../article-cache.service';
 import { ArticleService } from '../article.service';
+import { ArticleSource } from '../article.source';
 import { Article } from '../model/article';
 
 @Component({
@@ -11,7 +13,7 @@ export class ArticleTopComponent implements OnInit {
 
   articles!: Article[];
   
-  constructor(private articleService: ArticleService) { }
+  constructor(private articleService: ArticleCacheService) { }
 
   ngOnInit() {
     this.articleService.getTop10Articles().subscribe(articles => {this.articles = articles});
