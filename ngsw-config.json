@@ -30,7 +30,7 @@
   "dataGroups": [
     {
       "name": "api",
-      "urls": ["/articles"],
+      "urls": ["/articles", "/article/:id"],
       "cacheConfig": {
         "strategy": "performance",
         "maxSize": 100,
