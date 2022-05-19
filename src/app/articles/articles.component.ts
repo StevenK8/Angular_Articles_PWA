@@ -42,7 +42,7 @@ export class ArticlesComponent implements OnInit {
     // this.articleService.getArticleByName(title).subscribe(a => {
     //   this.articles = a;
     // });
-    // this.articlesFilter = this.articles;
+    this.articlesFilter = this.articles;
     this.articlesFilter = this.articles.filter(a => a.title.includes(title) || a.content.includes(title));
   }
   
