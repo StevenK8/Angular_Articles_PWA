@@ -1,6 +1,6 @@
 <form class="d-flex" role="search">
   <input class="form-control me-2" type="search" placeholder="Search an article" aria-label="Search"
-    (input)="searchArticle($event)" (ngModelChange)="searchArticle">
+  (keyup)="searchArticle($event)">
 </form>
 
 <div class="container-md">
