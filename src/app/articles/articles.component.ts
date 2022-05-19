@@ -12,12 +12,15 @@ import { Article } from '../model/article';
 export class ArticlesComponent implements OnInit {
 
   articles!: Article[];
+
+  articlesFilter ?: Article[];
   
   constructor(private articleService: ArticleCacheService) {
   }
 
   ngOnInit() {
     this.articleService.getArticles().subscribe(articles => {this.articles = articles});
+    this.articlesFilter = this.articles;
   }
 
   delete(article: Article) {
@@ -36,9 +39,10 @@ export class ArticlesComponent implements OnInit {
   public searchArticle(e: Event) {
     const title = (<HTMLInputElement>e.target).value;
 
-    this.articleService.getArticleByName(title).subscribe(a => {
-      this.articles = a;
-    });
+    // this.articleService.getArticleByName(title).subscribe(a => {
+    //   this.articles = a;
+    // });
+    this.articlesFilter = this.articles.filter(a => a.title.includes(title) || a.content.includes(title));
   }
   
 }
