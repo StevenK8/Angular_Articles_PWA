@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1652962959473,
+  "timestamp": 1652963225910,
   "index": "/TP2-StevenKerautret/index.html",
   "assetGroups": [
     {
@@ -45,7 +45,8 @@
     {
       "name": "api",
       "patterns": [
-        "\\/articles"
+        "\\/articles",
+        "\\/article\\/:id"
       ],
       "strategy": "performance",
       "maxSize": 100,
