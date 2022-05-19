@@ -6,6 +6,8 @@ import { Author, AuthorCreation } from './model/author';
 
 export abstract class ArticleSource {
 
+  abstract preloadAuthors$(): Observable<Author[]>;
+
   abstract getArticles(): Observable<Article[]>;
 
   abstract getTop10Articles(): Observable<Article[]> ;
