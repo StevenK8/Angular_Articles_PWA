@@ -44,11 +44,11 @@ export class ArticleComponent implements OnInit {
     private articleService: ArticleCacheService
   ) {}
 
-  onDelete() {
+  onDelete(): void {
     this.deleteArticle.emit(this.article);
   }
 
-  openInfo() {
+  openInfo(): void {
     if (this.article) {
       this.route.navigate(['/article', this.article.id]);
     }

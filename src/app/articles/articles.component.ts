@@ -30,7 +30,7 @@ export class ArticlesComponent implements OnInit {
     }
   }
 
-  public searchArticle(e: Event) {
+  public searchArticle(e: Event): void {
     if (this.articles) {
       const title = (<HTMLInputElement>e.target).value;
       this.articlesFilter = this.articles.filter(
