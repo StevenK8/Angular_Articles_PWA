@@ -10,7 +10,7 @@ import { Article } from '../model/article';
 })
 export class ArticleInfoComponent implements OnInit {
   @Input()
-  articles!: Article[];
+  articles: Article[] | undefined;
 
   constructor(
     private route: ActivatedRoute,

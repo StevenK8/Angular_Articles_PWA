@@ -11,14 +11,9 @@ export class NavbarComponent implements OnInit {
 
   public isCollapsed = true;
 
-  text!: string;
-
   constructor() { }
 
   ngOnInit() {
   }
 
-  sendMessage(text : string) {
-    this.messageEvent.emit(text);
-  }
 }

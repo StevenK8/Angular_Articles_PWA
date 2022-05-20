@@ -10,11 +10,5 @@ export class AppComponent {
 
   constructor() {}
 
-  message!: string;
-
-  receiveMessage($event: string) {
-    this.message = $event;
-  }
-
 }
 
