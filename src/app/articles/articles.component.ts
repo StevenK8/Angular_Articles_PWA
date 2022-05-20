@@ -20,7 +20,8 @@ export class ArticlesComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  delete(article: Article) {
+
+  delete(article: Article): void {
     if (this.articles) {
       this.articleService.deleteArticle(article.id).subscribe(() => {
         if (this.articles) {
