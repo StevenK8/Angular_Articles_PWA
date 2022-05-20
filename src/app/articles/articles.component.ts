@@ -10,7 +10,7 @@ import { Article } from '../model/article';
   templateUrl: './articles.component.html',
   styleUrls: ['./articles.component.css'],
 })
-export class ArticlesComponent implements OnInit {
+export class ArticlesComponent implements OnInit{
   articles!: Article[];
 
   articlesFilter?: Article[];
@@ -22,29 +22,16 @@ export class ArticlesComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
   }
-
   delete(article: Article) {
-    this.articleService.deleteArticle(article.id).subscribe((a) => {
+    this.articleService.deleteArticle(article.id).subscribe(() => {
       this.articles = this.articles.filter((a) => a.id !== article.id);
     });
   }
 
-  getAuthor(article: Article) {
-    this.articleService.getArticleByName(article.title).subscribe((a) => {
-      // console.log(a);
-    });
-    // console.log(article);
-  }
-
   public searchArticle(e: Event) {
     const title = (<HTMLInputElement>e.target).value;
-
-    // this.articleService.getArticleByName(title).subscribe(a => {
-    //   this.articles = a;
-    // });
     this.articlesFilter = this.articles.filter(
       (a) =>
         a.title.toLowerCase().includes(title.toLowerCase()) ||

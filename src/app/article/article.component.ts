@@ -46,15 +46,7 @@ export class ArticleComponent implements OnInit {
     this.deleteArticle.emit(this.article);
   }
 
-  // onGetAuthor() {
-  //   this.articleService.getAuthorFromArticle(this.article).subscribe(a => {
-  //     this.getAuthor.emit(a);
-  //   });
-  //   // this.getAuthor.emit(this.article);
-  // }
-
   openInfo() {
-    // this.ngOnInit();
     this.route.navigate(['/article', this.article.id]);
   }
 

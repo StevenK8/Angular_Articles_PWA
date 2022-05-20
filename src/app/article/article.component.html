@@ -1,4 +1,4 @@
-<div class="card p-2 flex-fill" style="width: 18rem;">
+<div class="card p-2 flex-fill" [ngStyle]="{'width': !isInfo ? '18rem' : null}">
   <div class="card-body">
     <h5 (click)="openInfo()" class="card-title" role="button">{{this.article.title}}</h5>
     <p (click)="openInfo()" class="card-text" role="button"> {{this.article.content}} </p>

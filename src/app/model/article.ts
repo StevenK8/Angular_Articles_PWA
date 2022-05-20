@@ -1,5 +1,3 @@
-import { Author, AuthorCreation } from "./author";
-
 export interface Article {
     title: string;
     content: string;
