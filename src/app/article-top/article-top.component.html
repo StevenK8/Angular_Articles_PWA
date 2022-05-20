@@ -1,6 +1,7 @@
-
 <div class="container-md">
-    <h2>Top 10 Articles</h2>
-  <app-article class="d-flex p-3" *ngFor="let article of articles " [article]="article">
-  </app-article>
+  <h2>Top 10 Articles</h2>
+  <div class="card-group">
+    <app-article class="d-flex p-3" *ngFor="let article of articles " [article]="article">
+    </app-article>
+  </div>
 </div>

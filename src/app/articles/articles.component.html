@@ -1,10 +1,12 @@
 <form class="d-flex" role="search">
   <input class="form-control me-2" type="search" placeholder="Search an article" aria-label="Search"
-  (keyup)="searchArticle($event)">
+    (keyup)="searchArticle($event)">
 </form>
 
 <div class="container-md">
+  <div class="card-group">
     <app-article class="d-flex p-3" *ngFor="let article of articlesFilter" [article]="article"
-      (deleteArticle)="delete($event)" >
+      (deleteArticle)="delete($event)">
     </app-article>
+  </div>
 </div>
