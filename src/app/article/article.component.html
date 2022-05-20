@@ -1,10 +1,10 @@
 <div class="card p-2 flex-fill" style="width: 18rem;">
   <div class="card-body">
-    <h5 (click)="openInfo()" class="card-title">{{this.article.title}}</h5>
-    <p (click)="openInfo()" class="card-text"> {{this.article.content}} </p>
+    <h5 (click)="openInfo()" class="card-title" role="button">{{this.article.title}}</h5>
+    <p (click)="openInfo()" class="card-text" role="button"> {{this.article.content}} </p>
     <!-- Italic author name -->
-    <p (click)="openInfo()" class="card-text fst-italic" > {{this.author.name}} </p>
-    <p (click)="openInfo()" class="card-text fst-italic" *ngIf="isInfo"> {{this.author.biography}} </p>
+    <p (click)="openInfo()" class="card-text fst-italic" role="button"> {{this.author.name}} </p>
+    <p (click)="openInfo()" class="card-text fst-italic" *ngIf="isInfo" role="button"> {{this.author.biography}} </p>
     <button (click)="onDelete()" class="btn btn-danger">Delete</button>
   </div>
 </div>
