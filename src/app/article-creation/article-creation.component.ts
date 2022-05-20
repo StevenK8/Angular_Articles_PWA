@@ -32,8 +32,6 @@ export class ArticleCreationComponent implements OnInit {
     const author:AuthorCreation = {name,
       biography};
 
-      // console.log(name);
-
 // Create author and get ID
     this.articleService.createAuthor(author).subscribe(a => {
       const article: ArticleCreation = {

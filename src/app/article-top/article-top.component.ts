@@ -9,7 +9,7 @@ import { Article } from '../model/article';
 })
 export class ArticleTopComponent implements OnInit {
 
-  articles!: Article[];
+  articles: Article[] | undefined;
   
   constructor(private articleService: ArticleCacheService) { }
 

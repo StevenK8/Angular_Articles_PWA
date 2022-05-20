@@ -1,7 +1,4 @@
-import {
-  Component,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticleCacheService } from '../article-cache.service';
 import { Article } from '../model/article';
 
@@ -11,7 +8,7 @@ import { Article } from '../model/article';
   styleUrls: ['./articles.component.css'],
 })
 export class ArticlesComponent implements OnInit {
-  articles!: Article[];
+  articles: Article[] | undefined;
 
   articlesFilter?: Article[];
 
@@ -22,33 +19,25 @@ export class ArticlesComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-
-  }
-
+  ngOnInit(): void {}
   delete(article: Article) {
-    this.articleService.deleteArticle(article.id).subscribe((a) => {
-      this.articles = this.articles.filter((a) => a.id !== article.id);
-    });
-  }
-
-  getAuthor(article: Article) {
-    this.articleService.getArticleByName(article.title).subscribe((a) => {
-      // console.log(a);
-    });
-    // console.log(article);
+    if (this.articles) {
+      this.articleService.deleteArticle(article.id).subscribe(() => {
+        if (this.articles) {
+          this.articles = this.articles.filter((a) => a.id !== article.id);
+        }
+      });
+    }
   }
 
   public searchArticle(e: Event) {
-    const title = (<HTMLInputElement>e.target).value;
-
-    // this.articleService.getArticleByName(title).subscribe(a => {
-    //   this.articles = a;
-    // });
-    this.articlesFilter = this.articles.filter(
-      (a) =>
-        a.title.toLowerCase().includes(title.toLowerCase()) ||
-        a.content.includes(title.toLowerCase())
-    );
+    if (this.articles) {
+      const title = (<HTMLInputElement>e.target).value;
+      this.articlesFilter = this.articles.filter(
+        (a) =>
+          a.title.toLowerCase().includes(title.toLowerCase()) ||
+          a.content.includes(title.toLowerCase())
+      );
+    }
   }
 }
