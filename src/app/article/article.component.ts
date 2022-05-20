@@ -18,7 +18,7 @@ export class ArticleComponent implements OnInit {
     biography: '',
   };
 
-  isInfo: boolean = false;
+  isInfo = false;
 
   @Output()
   deleteArticle: EventEmitter<Article> = new EventEmitter();
@@ -28,7 +28,7 @@ export class ArticleComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.article) {
-      if (this.route.url === '/article/' + this.article.id) {
+      if (this.route.url === '/article/' + this.article.id.toString()) {
         this.isInfo = true;
       } else {
         this.isInfo = false;
