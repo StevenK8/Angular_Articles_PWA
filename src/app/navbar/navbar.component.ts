@@ -9,6 +9,8 @@ export class NavbarComponent implements OnInit {
   @Output()
   messageEvent = new EventEmitter<string>();
 
+  public isCollapsed = true;
+
   text!: string;
 
   constructor() { }
