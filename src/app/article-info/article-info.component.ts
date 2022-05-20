@@ -1,10 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ArticleCacheService } from '../article-cache.service';
-import { ArticleService } from '../article.service';
-import { ArticleSource } from '../article.source';
 import { Article } from '../model/article';
-import { Author } from '../model/author';
 
 @Component({
   selector: 'app-article-info',

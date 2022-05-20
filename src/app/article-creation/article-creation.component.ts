@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ArticleCacheService } from '../article-cache.service';
-import { ArticleService } from '../article.service';
-import { ArticleSource } from '../article.source';
-import { Article, ArticleCreation } from '../model/article';
-import { Author, AuthorCreation } from '../model/author';
+import { ArticleCreation } from '../model/article';
+import { AuthorCreation } from '../model/author';
 
 
 @Component({
@@ -49,15 +47,6 @@ export class ArticleCreationComponent implements OnInit {
 
     }
     );
-    // const idauthor = this.articleService.getAuthorId(author);
-
-    // const newArticle = {
-    //   title,
-    //   content,
-    //   idauthor
-    // }
-
-    // this.articleService.createArticle(newArticle).subscribe(() => { this.router.navigate(['/']) });
   }
 
 }

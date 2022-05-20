@@ -1,13 +1,8 @@
 import {
   Component,
-  Input,
   OnInit,
-  SimpleChange,
-  SimpleChanges,
 } from '@angular/core';
 import { ArticleCacheService } from '../article-cache.service';
-import { ArticleService } from '../article.service';
-import { ArticleSource } from '../article.source';
 import { Article } from '../model/article';
 
 @Component({

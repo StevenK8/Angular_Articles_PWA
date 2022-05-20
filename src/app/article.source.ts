@@ -1,6 +1,4 @@
-import { Injectable } from '@angular/core';
 import { Article, ArticleCreation } from './model/article';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Author, AuthorCreation } from './model/author';
 
