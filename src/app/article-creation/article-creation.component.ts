@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ArticleCacheService } from '../article-cache.service';
 import { ArticleService } from '../article.service';
+import { ArticleSource } from '../article.source';
 import { Article, ArticleCreation } from '../model/article';
 import { Author, AuthorCreation } from '../model/author';
 
@@ -15,7 +17,7 @@ export class ArticleCreationComponent implements OnInit {
 
   articleForm : FormGroup;
 
-  constructor(private articleService: ArticleService, private fb: FormBuilder, private router: Router) {
+  constructor(private articleService: ArticleCacheService, private fb: FormBuilder, private router: Router) {
     this.articleForm = this.fb.group({
       title: ['', Validators.required ],
       content : ['', Validators.required ],
@@ -32,7 +34,7 @@ export class ArticleCreationComponent implements OnInit {
     const author:AuthorCreation = {name,
       biography};
 
-      console.log(name);
+      // console.log(name);
 
 // Create author and get ID
     this.articleService.createAuthor(author).subscribe(a => {
@@ -42,7 +44,7 @@ export class ArticleCreationComponent implements OnInit {
         idauthor: a.id
       };
       this.articleService.createArticle(article).subscribe(() => {
-        this.router.navigate(['/articles']);
+        this.router.navigate(['/']);
       });
 
     }

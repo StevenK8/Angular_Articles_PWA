@@ -5,8 +5,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Aide pour le TP2
 
-- J'ai aidé : 
-- M'ont aidé : 
+- J'ai aidé : Claire Bauchu 
+- M'ont aidé : Sébastien Léonce
 
 ## Installation
 
@@ -14,11 +14,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Lancement BDD
 
-1. ```json-server --watch db.json```
+2. ```cd dist/simple-app```
 
 ## Lancement APP
 
-3. ```ng serve```
+3. ```http-server```
 
 ### Development server
 

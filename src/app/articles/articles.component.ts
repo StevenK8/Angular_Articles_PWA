@@ -1,5 +1,13 @@
-import { Component, Input, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  SimpleChange,
+  SimpleChanges,
+} from '@angular/core';
+import { ArticleCacheService } from '../article-cache.service';
 import { ArticleService } from '../article.service';
+import { ArticleSource } from '../article.source';
 import { Article } from '../model/article';
 
 @Component({
@@ -8,25 +16,30 @@ import { Article } from '../model/article';
   styleUrls: ['./articles.component.css'],
 })
 export class ArticlesComponent implements OnInit {
-
   articles!: Article[];
-  
-  constructor(private articleService: ArticleService) {
+
+  articlesFilter?: Article[];
+
+  constructor(private articleService: ArticleCacheService) {
+    this.articleService.getArticles().subscribe((articles) => {
+      this.articles = articles;
+      this.articlesFilter = articles;
+    });
   }
 
   ngOnInit() {
-    this.articleService.getArticles().subscribe(articles => {this.articles = articles});
+
   }
 
   delete(article: Article) {
-    this.articleService.deleteArticle(article.id).subscribe(a => {
-      this.articles = this.articles.filter(a => a.id !== article.id);
+    this.articleService.deleteArticle(article.id).subscribe((a) => {
+      this.articles = this.articles.filter((a) => a.id !== article.id);
     });
   }
 
   getAuthor(article: Article) {
-    this.articleService.getArticleByName(article.title).subscribe(a => {
-      console.log(a);
+    this.articleService.getArticleByName(article.title).subscribe((a) => {
+      // console.log(a);
     });
     // console.log(article);
   }
@@ -34,9 +47,13 @@ export class ArticlesComponent implements OnInit {
   public searchArticle(e: Event) {
     const title = (<HTMLInputElement>e.target).value;
 
-    this.articleService.getArticleByName(title).subscribe(a => {
-      this.articles = a;
-    });
+    // this.articleService.getArticleByName(title).subscribe(a => {
+    //   this.articles = a;
+    // });
+    this.articlesFilter = this.articles.filter(
+      (a) =>
+        a.title.toLowerCase().includes(title.toLowerCase()) ||
+        a.content.includes(title.toLowerCase())
+    );
   }
-  
 }

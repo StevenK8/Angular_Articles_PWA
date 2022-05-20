@@ -26,5 +26,17 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "api",
+      "urls": ["http://localhost:3000/**",
+        "https://my-json-server.typicode.com/Polytech-Paris-Sud-Web/TP2-StevenKerautret/**"],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 100,
+        "maxAge": "3d"
+      }
+    }
   ]
 }
