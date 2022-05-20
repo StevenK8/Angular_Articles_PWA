@@ -71,6 +71,12 @@
       "content": "The butterfly effect is a phenomenon in which a person's thoughts and feelings are altered by the presence of a second person in their life.",
       "idauthor": 6,
       "id": 13
+    },
+    {
+      "title": "The Leftovers",
+      "content": "The Leftovers is an American supernatural drama television series. The series begins three years after the 'Sudden Departure', a global event that resulted in 2% of the world's population disappearing. The lives of police chief Kevin Garvey (Justin Theroux) and his family, along with grieving widow Nora Durst (Carrie Coon) and her brother, Reverend Matt Jamison (Christopher Eccleston), are the focal points of the series as they struggle to adjust to life after the Departure.",
+      "idauthor": 12,
+      "id": 14
     }
   ],
   "authors": [
@@ -128,6 +134,11 @@
       "name": "dzadazdza",
       "biography": "dzadaz",
       "id": 11
+    },
+    {
+      "name": "Damon Lindelof",
+      "biography": "Damon Lindelof is an American actor, comedian, writer, and director. He is best known for his role as Wolverine in the Marvel Cinematic Universe (MCU), and for his work in the HBO series The Walking Dead.",
+      "id": 12
     }
   ]
 }
