@@ -29,7 +29,7 @@ export class ArticleInfoComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  delete(article: Article) {
+  delete(article: Article): void {
     this.articleService.deleteArticle(article.id).subscribe(() => {
       this.router.navigate(['/']);
     });
